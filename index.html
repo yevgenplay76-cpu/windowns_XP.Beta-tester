@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows XP Simulation</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="desktop">
+        <div id="taskbar">
+            <div id="start-button" onclick="toggleStartMenu()">Start</div>
+            <div id="taskbar-icons"></div>
+            <div id="system-tray">
+                <div id="time">12:00 PM</div>
+            </div>
+        </div>
+        <div id="start-menu" class="hidden">
+            <ul>
+                <li onclick="openWindow('my-computer')">My Computer</li>
+                <li onclick="openWindow('my-documents')">My Documents</li>
+                <li onclick="openWindow('internet-explorer')">Internet Explorer</li>
+                <li onclick="openWindow('dinosaur-game')">Dinosaur Game</li>
+                <li onclick="openWindow('app-store')">App Store</li>
+                <li onclick="shutdown()">Shut Down...</li>
+            </ul>
+        </div>
+        <div id="desktop-icons">
+            <div class="icon" onclick="openWindow('my-computer')">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzMzMzMzMyIvPgo8cmVjdCB4PSI0IiB5PSI0IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNmZmZmZmYiLz4KPHJlY3QgeD0iOCIgeT0iOCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjgiIGZpbGw9IiMwMDAwMDAiLz4KPHRleHQgeD0iMTYiIHk9IjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBmb250LXNpemU9IjEwIj5QQzwvdGV4dD4KPC9zdmc+" alt="My Computer">
+                <span>My Computer</span>
+            </div>
+            <div class="icon" onclick="openWindow('internet-explorer')">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzMzMzMzMyIvPgo8cmVjdCB4PSI0IiB5PSI0IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNmZmZmZmYiLz4KPHRleHQgeD0iMTYiIHk9IjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMDAwMDAwIiBmb250LXNpemU9IjEwIj5JRTwvdGV4dD4KPHRleHQgeD0iMTYiIHk9IjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBmb250LXNpemU9IjEwIj5JRTwvdGV4dD4KPC9zdmc+" alt="Internet Explorer">
+                <span>Internet Explorer</span>
+            </div>
+            <div class="icon" onclick="openWindow('dinosaur-game')">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzMzMzMzMyIvPgo8cmVjdCB4PSI0IiB5PSI0IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNmZmZmZmYiLz4KPHRleHQgeD0iMTYiIHk9IjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMDAwMDAwIiBmb250LXNpemU9IjEwIj7DinDwn5iKPC90ZXh0Pgo8dGV4dCB4PSIxNiIgeT0iMzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmYiIGZvbnQtc2l6ZT0iMTAiPkRJTk88L3RleHQ+Cjwvc3ZnPg==" alt="Dinosaur Game">
+                <span>Dinosaur Game</span>
+            </div>
+            <div class="icon" onclick="openWindow('app-store')">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzMzMzMzMyIvPgo8cmVjdCB4PSI0IiB5PSI0IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNmZmZmZmYiLz4KPHRleHQgeD0iMTYiIHk9IjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMDAwMDAwIiBmb250LXNpemU9IjEwIj5BUFA8L3RleHQ+Cjx0ZXh0IHg9IjE2IiB5PSIzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmZiIgZm9udC1zaXplPSIxMCI+Q1RPUkU8L3RleHQ+Cjwvc3ZnPg==" alt="App Store">
+                <span>App Store</span>
+            </div>            <div class="icon" onclick="openWindow('my-documents')">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzMzMzMzMyIvPgo8cmVjdCB4PSI0IiB5PSI0IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNmZmZmZmYiLz4KPHRleHQgeD0iMTYiIHk9IjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMDAwMDAwIiBmb250LXNpemU9IjEwIj5ET0M8L3RleHQ+Cjx0ZXh0IHg9IjE2IiB5PSIzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmYiIgZm9udC1zaXplPSIxMCI+RE9DPC90ZXh0Pgo8L3N2Zz4=" alt="My Documents">
+                <span>My Documents</span>
+            </div>        </div>
+        <div id="windows"></div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
