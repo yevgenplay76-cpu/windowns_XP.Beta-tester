@@ -1,0 +1,316 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'MS Sans Serif', sans-serif;
+    background-color: #008080;
+    overflow: hidden;
+}
+
+#desktop {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzAwODA4MCIvPgo8L3N2Zz4=') repeat;
+}
+
+#taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-color: #c0c0c0;
+    border-top: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+#start-button {
+    background-color: #c0c0c0;
+    border: 2px outset #c0c0c0;
+    padding: 2px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+#start-button:active {
+    border: 2px inset #c0c0c0;
+}
+
+#taskbar-icons {
+    flex: 1;
+    display: flex;
+}
+
+#system-tray {
+    display: flex;
+    align-items: center;
+    margin-right: 4px;
+}
+
+#time {
+    background-color: #c0c0c0;
+    border: 1px inset #c0c0c0;
+    padding: 2px 4px;
+    font-size: 11px;
+}
+
+#start-menu {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 200px;
+    background-color: #c0c0c0;
+    border: 2px outset #c0c0c0;
+    z-index: 1000;
+}
+
+#start-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 2px;
+}
+
+#start-menu li {
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#start-menu li:hover {
+    background-color: #000080;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+#desktop-icons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 60px;
+}
+
+.icon img {
+    width: 32px;
+    height: 32px;
+}
+
+.icon span {
+    font-size: 10px;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.window {
+    position: absolute;
+    background-color: #c0c0c0;
+    border: 2px outset #c0c0c0;
+    z-index: 100;
+    min-width: 300px;
+    min-height: 200px;
+}
+
+.window-header {
+    background: linear-gradient(to right, #000080, #008080);
+    color: white;
+    padding: 2px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    font-size: 12px;
+}
+
+.window-controls {
+    display: flex;
+}
+
+.window-control {
+    width: 16px;
+    height: 14px;
+    margin-left: 2px;
+    background-color: #c0c0c0;
+    border: 1px outset #c0c0c0;
+    cursor: pointer;
+    text-align: center;
+    line-height: 12px;
+    font-size: 10px;
+}
+
+.window-control:hover {
+    background-color: #dfdfdf;
+}
+
+.window-content {
+    padding: 8px;
+    height: calc(100% - 20px);
+    overflow: auto;
+}
+
+/* Dinosaur Game Styles */
+#dino-game {
+    position: relative;
+    width: 600px;
+    height: 150px;
+    background-color: #f7f7f7;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+
+#dino {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+}
+
+.obstacle {
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+    width: 20px;
+    height: 40px;
+    background-color: #000;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+}
+
+/* Internet Explorer Styles */
+#ie-window .window-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#ie-toolbar {
+    background-color: #c0c0c0;
+    padding: 4px;
+    border-bottom: 1px inset #c0c0c0;
+    display: flex;
+    align-items: center;
+}
+
+#ie-toolbar input {
+    flex: 1;
+    margin: 0 4px;
+}
+
+#ie-content {
+    flex: 1;
+    background-color: white;
+    padding: 8px;
+}
+
+/* App Store Styles */
+#store-tabs {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#store-tabs button {
+    flex: 1;
+    padding: 8px;
+    background-color: #c0c0c0;
+    border: 1px outset #c0c0c0;
+    cursor: pointer;
+}
+
+#store-tabs button:hover {
+    background-color: #dfdfdf;
+}
+
+.tab-content {
+    display: block;
+}
+
+.tab-content.hidden {
+    display: none;
+}
+
+#apps, #store-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.app {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #c0c0c0;
+    border: 1px outset #c0c0c0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app:hover {
+    background-color: #dfdfdf;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #f0f0f0;
+    border: 1px solid #000;
+    margin-top: 5px;
+}
+
+.progress-fill {
+    height: 20px;
+    background-color: #008000;
+    width: 0%;
+    transition: width 0.2s;
+}
+
+/* File Explorer Styles */
+#file-toolbar {
+    margin-bottom: 10px;
+}
+
+#file-toolbar button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: #c0c0c0;
+    border: 1px outset #c0c0c0;
+    cursor: pointer;
+}
+
+#file-toolbar button:hover {
+    background-color: #dfdfdf;
+}
+
+#file-list {
+    border: 1px solid #000;
+    height: 200px;
+    overflow-y: auto;
+    background-color: #ffffff;
+}
+
+.file-item {
+    padding: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+.file-item:hover {
+    background-color: #e6e6e6;
+}
